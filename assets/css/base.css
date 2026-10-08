@@ -1,0 +1,134 @@
+/* Tokens, reset e tipografia. As cores da loja (--c-primary / --c-accent)
+   são trocadas em tempo de execução por assets/js/core/theme.js. */
+
+:root {
+  --c-primary: #3b1452;
+  --c-primary-ink: #ffffff;
+  --c-accent: #f4c430;
+  --c-accent-ink: #1d1527;
+
+  --c-bg: #f7f4fa;
+  --c-surface: #ffffff;
+  --c-ink: #1d1527;
+  --c-muted: #6b6178;
+  --c-line: #e6dff0;
+  --c-primary-soft: color-mix(in srgb, var(--c-primary) 8%, white);
+  --c-primary-mid: color-mix(in srgb, var(--c-primary) 20%, white);
+
+  --c-ok: #17703f;
+  --c-ok-soft: #e1f4ea;
+  --c-danger: #bf2237;
+  --c-danger-soft: #fdeaed;
+  --c-warn: #6e4b00;
+  --c-warn-soft: #fff3d1;
+
+  --r-s: 10px;
+  --r-m: 14px;
+  --r-l: 22px;
+  --r-pill: 999px;
+
+  --font: ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+
+  --nav-h: 68px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --gutter: 16px;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+html.has-sheet {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--c-ink);
+  background: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--c-primary);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--c-primary);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

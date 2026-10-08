@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Cardápio</title>
+    <meta name="description" content="Cardápio digital" />
+    <meta name="theme-color" content="#3b1452" />
+
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/menu.css" />
+  </head>
+  <body>
+    <div id="splash" role="status" aria-live="polite">
+      <svg viewBox="0 0 64 64" width="72" height="72" aria-hidden="true">
+        <path d="M10 34h44a22 22 0 0 1-44 0z" fill="currentColor" />
+        <path d="M16 34c0-9 7-15 16-15s16 6 16 15z" fill="currentColor" opacity=".55" />
+      </svg>
+      <p>Preparando o cardápio</p>
+    </div>
+
+    <div id="app" class="app">
+      <header id="store-header" class="store-header"></header>
+
+      <div class="search">
+        <label class="search__field">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.5-3.5" />
+          </svg>
+          <input id="search" type="search" placeholder="Buscar no cardápio" autocomplete="off" aria-label="Buscar no cardápio" />
+        </label>
+      </div>
+
+      <nav id="category-nav" class="category-nav" aria-label="Categorias" hidden></nav>
+      <main id="menu" class="menu"></main>
+
+      <footer class="app-footer">
+        <a href="admin/">Área da loja</a>
+      </footer>
+    </div>
+
+    <nav id="bottom-nav" class="bottom-nav" aria-label="Navegação principal"></nav>
+
+    <noscript>Este cardápio precisa de JavaScript para funcionar.</noscript>
+    <script type="module" src="assets/js/menu/main.js"></script>
+  </body>
+</html>
